@@ -16,11 +16,11 @@ An example that uses the local file system:
 
       var obj = { data: [1,2,3] };
 
-      filer.save( JSON.stringify( obj ), 'new-file.json', function( err, res ){
+      filer.save( JSON.stringify( obj ), 'path/to/subdir', 'new-file.json', function( err, res ){
         console.log( err, res );
       });
 
-      filer.get( 'new-file.json', function( err, data ){
+      filer.get( 'path/to/subdir', 'new-file.json', function( err, data ){
         console.log( err, JSON.parse( data ) );
       });
     ` 
