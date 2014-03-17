@@ -1,0 +1,24 @@
+{
+  "name": "filer",
+  "version": "0.0.1",
+  "description": "A configurable file saver and getter ",
+  "main": "index.js",
+  "scripts": {
+    "test": "vows --spec"
+  },
+  "keywords": [
+    "filesystem",
+    "s3"
+  ],
+  "author": "Chris Helm",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "vows": "~0.7.0",
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "0.3.x",
+    "grunt-vows": "0.4.x"
+  },
+  "dependencies": {
+    "node-fs": "~0.1.7"
+  }
+}
