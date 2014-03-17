@@ -6,7 +6,6 @@ A configurable tool that can save/get files directly to a local file system or a
 
 An example that uses the local file system:
 
-    `
       var Filer = require('Filer');
       
       var filer = new Filer({
@@ -23,4 +22,3 @@ An example that uses the local file system:
       filer.get( 'path/to/subdir', 'new-file.json', function( err, data ){
         console.log( err, JSON.parse( data ) );
       });
-    ` 
