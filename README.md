@@ -9,7 +9,7 @@ A configurable tool that can save/get files directly to a local file system or a
 
 ## Usage 
 
-    `javascript
+    ` javascript
     #An example that uses the local file system:
 
     var Filer = require('Filer');
