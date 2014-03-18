@@ -9,6 +9,7 @@ A configurable tool that can save/get files directly to a local file system or a
 
 ## Usage 
 
+    `javascript
     #An example that uses the local file system:
 
     var Filer = require('Filer');
@@ -35,6 +36,7 @@ A configurable tool that can save/get files directly to a local file system or a
     filer.read( 'path/to/subdir', 'new-file.json', function( err, data ){
       console.log( err, JSON.parse(data) );
     });
+    `
 
 ## Using S3 for storage 
 
