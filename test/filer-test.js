@@ -1,7 +1,7 @@
 var vows   = require('vows');
 var assert = require('assert');
 
-var Filer = require('../');
+var Peechee = require('../');
 
 var params = {
   type: 'local',
@@ -13,10 +13,10 @@ var s3params = {
   dir: 'test-bucket'
 };
 
-vows.describe('Filer').addBatch({
+vows.describe('Peechee').addBatch({
   'When creating a local filesystem filer': {
     topic: function () {
-      new Filer(params, this.callback);
+      new Peechee(params, this.callback);
     },
     'It should return the filer instance of type local': function (err, filer) {
       assert.equal(err, null);
@@ -27,7 +27,7 @@ vows.describe('Filer').addBatch({
   },
   'When creating a s3 filesystem filer': {
     topic: function () {
-      new Filer(s3params, this.callback);
+      new Peechee(s3params, this.callback);
     },
     'It should return the filer instance of type s3': function (err, filer) {
       assert.equal(err, null);

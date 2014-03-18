@@ -3,7 +3,7 @@ var AWS = require('aws-sdk');
 
 // A simple fn that sets up scope vars from inputs
 // loads in the correct lib based on the input type 
-Filer = function( config, callback ){
+Peechee = function( config, callback ){
 
   // makes these accessible to our sub-methods
   this.type = config.type;
@@ -37,4 +37,4 @@ Filer = function( config, callback ){
   return this;
 };
 
-module.exports = Filer;
+module.exports = Peechee;
