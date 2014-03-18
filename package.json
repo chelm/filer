@@ -12,6 +12,7 @@
   ],
   "author": "Chris Helm",
   "license": "BSD-2-Clause",
+  "repo": "git@github.com:chelm/filer.git",
   "devDependencies": {
     "vows": "~0.7.0",
     "grunt": "0.4.x",
