@@ -13,7 +13,7 @@ var s3params = {
   dir: 'test-bucket'
 };
 
-vows.describe('FeatureService').addBatch({
+vows.describe('Filer').addBatch({
   'When creating a local filesystem filer': {
     topic: function () {
       new Filer(params, this.callback);
@@ -21,7 +21,6 @@ vows.describe('FeatureService').addBatch({
     'It should return the filer instance of type local': function (err, filer) {
       assert.equal(err, null);
       assert.notEqual(filer, null);
-
       assert.equal( filer.type, params.type );
       assert.equal( filer.dir, params.dir );
     }
@@ -33,7 +32,6 @@ vows.describe('FeatureService').addBatch({
     'It should return the filer instance of type s3': function (err, filer) {
       assert.equal(err, null);
       assert.notEqual(filer, null);
-
       assert.equal( filer.type, s3params.type );
       assert.equal( filer.dir, s3params.dir );
     }

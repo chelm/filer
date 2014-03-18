@@ -17,7 +17,7 @@ vows.describe('Local Filer').addBatch({
   'When saving data to a local file': {
     topic: function () {
       filer = new Filer(params);
-      filer.save( JSON.stringify( data ), '', 'local.json', this.callback );
+      filer.write( JSON.stringify( data ), '', 'local.json', this.callback );
     },
     'It should successfully write the data to a local file': function (err) {
       assert.equal( err, null );
@@ -27,7 +27,7 @@ vows.describe('Local Filer').addBatch({
   'When saving data to a local file in a subdir from the base': {
     topic: function () {
       filer = new Filer( params );
-      filer.save( JSON.stringify( data ), 'dir1/dir2', 'local.json', this.callback );
+      filer.write( JSON.stringify( data ), 'dir1/dir2', 'local.json', this.callback );
     },
     'It should successfully write the data to a local file': function (err, res) {
       assert.equal(err, null);
@@ -39,7 +39,7 @@ vows.describe('Local Filer').addBatch({
       filer = new Filer( params );
       var self = this;
       setTimeout(function(){
-        filer.get( '', 'local.json', self.callback );
+        filer.read( '', 'local.json', self.callback );
       }, 100);
     },
     'It should successfully read the data from a local file': function (err, res) {
@@ -51,10 +51,33 @@ vows.describe('Local Filer').addBatch({
   'When trying to read data from a non-existant file': {
     topic: function () {
       filer = new Filer( params );
-      filer.get( '', 'localZZZZ.json', this.callback );
+      filer.read( '', 'localZZZZ.json', this.callback );
     },
     'It should err': function (err, res) {
-      assert.equal(typeof(err), 'object');
+      assert.equal(typeof(err), 'string');
+    }
+  },
+
+  'When trying to get the path data from a non-existant file': {
+    topic: function () {
+      filer = new Filer( params );
+      filer.path( '', 'localZZZZ.json', this.callback );
+    },
+    'It should err': function (err, res) {
+      assert.equal(typeof(err), 'string');
+    }
+  },
+
+  'When trying to read data from a file': {
+    topic: function () {
+      var self = this;
+      filer = new Filer( params );
+      setTimeout(function(){
+        filer.read( '', 'local.json', self.callback );
+      }, 100);
+    },
+    'It should err': function (err, res) {
+      assert.equal(err, null);
     }
   }
 }).export(module);
