@@ -22,6 +22,13 @@ Peechee = function( config, callback ){
     // set the region for the s3 bucket 
     this.AWS.config.region = config.region || 'us-west-2';
 
+    if ( config.aws_key_id && config.aws_secret_Access_key ){
+      this.AWS.config.update({ 
+        accessKeyId: config.aws_key_id, 
+        secretAccessKey: config.aws_secret_Access_key
+      });
+    }
+
     // load the local module and add its save and get methods
     var s3 = require('./lib/s3.js');
     this.write = s3.write;
