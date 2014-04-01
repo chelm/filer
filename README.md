@@ -38,10 +38,12 @@ A configurable tool that can save/get files directly to a local file system or a
 
 ## Using S3 for storage 
 
-To configre peechee to use S3 you need to first export your AWS keys to your local environemt vars: 
+To configure peechee to use S3 you can either first export your AWS keys to your local environemt vars: 
 
     > export AWS_ACCESS_KEY_ID='AKID'
     > export AWS_SECRET_ACCESS_KEY='SECRET' 
+
+Or you can pass the keys directly to Peechee
 
 
     var Peechee = require('Peechee');
@@ -49,6 +51,8 @@ To configre peechee to use S3 you need to first export your AWS keys to your loc
     var peechee = new Peechee({
       type: 's3',
       dir: 'my-bucket',
+      aws_key_id: 'akid',
+      aws_secret_access_key: 'sekritkey',
       region: 'us-west-2' // optional
     });
 

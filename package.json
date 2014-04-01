@@ -1,6 +1,6 @@
 {
   "name": "peechee",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A configurable file saver and getter ",
   "main": "index.js",
   "scripts": {
