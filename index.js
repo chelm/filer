@@ -22,10 +22,10 @@ Peechee = function( config, callback ){
     // set the region for the s3 bucket 
     this.AWS.config.region = config.region || 'us-west-2';
 
-    if ( config.aws_key_id && config.aws_secret_Access_key ){
+    if ( config.aws_key_id && config.aws_secret_access_key ){
       this.AWS.config.update({ 
         accessKeyId: config.aws_key_id, 
-        secretAccessKey: config.aws_secret_Access_key
+        secretAccessKey: config.aws_secret_access_key
       });
     }
 
