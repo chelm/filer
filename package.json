@@ -1,6 +1,6 @@
 {
   "name": "peechee",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A configurable file saver and getter ",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   ],
   "author": "Chris Helm",
   "license": "BSD-2-Clause",
-  "repo": "git@github.com:chelm/peechee.git",
+  "repository": "git@github.com:chelm/peechee.git",
   "devDependencies": {
     "vows": "~0.7.0",
     "grunt": "0.4.x",
